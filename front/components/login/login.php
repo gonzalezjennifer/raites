@@ -7,11 +7,17 @@
     <title>Raites</title>
   </head>
   <body>
+    <div class="row mt-5">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form action="" method="post">
+                <input type="email" name="correo" placeholder="Correo" class="form-control mb-3">
+                <input type="password" name="contrasena" placeholder="Ingresa la contraseña" class="form-control mb-3">
+                <input type="submit" name="btningresar" class="btn btn-primary" value="Iniciar sesion" style="width: 100%;">
+            </form>
+        </div>
+    </div>
     
-    
-    <a href="components/login/login.php" class="btn btn-primary">Iniciar sesión</a>
-    <a href="components/registro/insertarusuario.php" class="btn btn-danger">Registrarse</a>
-
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
