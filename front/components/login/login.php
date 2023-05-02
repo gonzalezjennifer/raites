@@ -22,7 +22,7 @@
                 <input type="email" name="correo" placeholder="Correo" class="form-control mb-3">
                 <input type="password" name="contrasena" placeholder="Ingresa la contraseña" class="form-control mb-3">
                 <input type="submit" name="btningresar" class="btn btn-info mb-3" value="Iniciar sesion" style="width: 100%;">
-                <a href="../index.html" class="btn btn-light" style="width: 100%;">Regresar</a>
+                <a href="../../index.html" class="btn btn-light" style="width: 100%;">Regresar</a>
               </form>
 
             </div>
