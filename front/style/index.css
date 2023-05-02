@@ -7,13 +7,13 @@
 .principal{
     height: 100%;
     width: 100%;
-    background-color: black;
+    background-color: white;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: white;
 }
 
 .contenido{
@@ -36,6 +36,6 @@ body {
 
 .nomapli{
     font-family: 'Anton', sans-serif;
-    font-size: 40px;
+    font-size: 35px;
     color: white;
 }
