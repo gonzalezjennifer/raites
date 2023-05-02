@@ -10,14 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@200&display=swap" rel="stylesheet">
     <title>Registro</title>
   </head>
-  <body>
+  <body style="background-color: #115372;">
     <!-- Section: Design Block -->
     <section class="text-center">
       <!-- Background image -->
       <div class="p-5 bg-image" style="
             background-image: url('../img/headerregistro.jpg');
-            height: 200px;
-            "></div>
+            height: 200px;">
+      </div>
       <!-- Background image -->
 
       <div class="card mx-4 mx-md-5 shadow-5-strong" style="
@@ -48,7 +48,7 @@
                     </select>
                     <div id="contbut">
                       <input type="submit" class="btn btn-info mb-2" style="width: 100%;">
-                      <a href="../index.html" class="btn btn-light" style="width: 100%; background-color: #9BA4B5!important;">Regresar</a>
+                      <a href="../index.html" class="btn btn-light" style="width: 100%;">Regresar</a>
                     </div>
                 </form>
             </div>
