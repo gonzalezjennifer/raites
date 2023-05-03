@@ -1,7 +1,6 @@
 <?php 
     include("../conexion.php");
     include ("../../mcript.php");
-    $conexion = conectar();
     $nombre = $_POST['nombre'];
     $apaterno = $_POST['apaterno'];
     $amaterno = $_POST['amaterno'];
@@ -11,15 +10,14 @@
     $numero = $_POST['numero'];
     $tipousuario = $_POST['tipousuario'];
 
-    $query = "INSERT INTO usuario (nombre, apaterno, amaterno, correo, contrasena, fotoperfil, numero, tipousuario) 
-                VALUES('$nombre', '$apaterno', '$amaterno', '$correo', '$contrasena_encriptada', '', '$numero', '$tipousuario')";
+    $sql = "INSERT INTO usuario (nombre, apaterno, amaterno, correo, contrasena, numero, tipo) 
+                VALUES('$nombre', '$apaterno', '$amaterno', '$correo', '$contrasena_encriptada', '$numero', '$tipousuario')";
 
-    $resultado = mysqli_query($conexion, $query);
-
-    if($resultado) {
-        header('location: ../../front/index.html');
+    if($conn->query($sql) === TRUE) {
+        header('location: https://raites.000webhostapp.com/index.html');
     } else {
         
-        echo 'FUCK ';
+        echo 'FUCK';
     }
+    $conn->close();
 ?>

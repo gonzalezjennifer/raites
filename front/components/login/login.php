@@ -1,6 +1,7 @@
 <?php
-  include ("../../../back/conexion.php");
-  include ("../../../mcript.php");
+  include ("../../back/conexion.php");
+  include ("../../mcript.php");
+  ob_start();
 ?>
 <!doctype html>
 <html lang="en">
@@ -23,7 +24,7 @@
               <h2 class="fw-bold mb-5 text-uppercase">Login</h2>
               
               <?php 
-                include("../../../back/login/control_login.php");
+                include("../../back/login/control_login.php");
               ?>
 
               <form action="" method="post">
