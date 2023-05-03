@@ -1,3 +1,7 @@
+<?php
+  include ("../../../back/conexion.php");
+  include ("../../../mcript.php");
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,6 +21,10 @@
             <div class="mb-md-5 mt-md-4 pb-5">
 
               <h2 class="fw-bold mb-5 text-uppercase">Login</h2>
+              
+              <?php 
+                include("../../../back/login/control_login.php");
+              ?>
 
               <form action="" method="post">
                 <input type="email" name="correo" placeholder="Correo" class="form-control mb-3">
@@ -28,7 +36,7 @@
             </div>
 
             <div>
-              <p class="mb-0">Don't have an account? <a href="../insertarusuario.php" class="text-white-50 fw-bold">Sign Up</a>
+              <p class="mb-0">Don't have an account? <a href="../registro/insertarusuario.php" class="text-white-50 fw-bold">Sign Up</a>
               </p>
             </div>
 
