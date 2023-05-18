@@ -4,7 +4,7 @@
         header('location: ../login/login.php');
     }
 
-    $user = $_SESSION["id"];
+    $user = $_GET['user'];
     echo "usuario conductor con nua:";
     echo $user;
 ?>
@@ -19,7 +19,8 @@
   </head>
   <body>
 
-    <a href="../../../back/login/control_logout.php" class="btn btn-danger">Salir</a>  
+    <a href="../../../back/login/control_logout.php" class="btn btn-danger">Salir</a>
+    <a href="../draite/raite.php?user=<?php echo $user ?>" class="btn btn-primary">Ofrecer raite</a>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
