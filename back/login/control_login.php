@@ -20,9 +20,9 @@
                 if ($usu['tipousuario']=="conductor") {
                     //header( "Location: temp.php? user = $user" );
                     //header("Location:temp.php?user=".$user);
-                    header("location: ../usuarioconductor/index.php?user=".$usu['id']);
+                    header("location: ../usuarioconductor/index.php");
                 } else {
-                    header("location: ../usuariopasajero/index.php?user=".$usu['id']);
+                    header("location: ../usuariopasajero/index.php");
                 }
             } else {
                 echo '<div class="alert alert-danger">ACCESO DENEGADO</div>';
