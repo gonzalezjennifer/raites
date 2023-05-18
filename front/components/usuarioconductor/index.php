@@ -4,7 +4,7 @@
         header('location: ../login/login.php');
     }
 
-    $user = $_GET['user'];
+    $user = $_SESSION["id"];
     echo "usuario conductor con nua:";
     echo $user;
 ?>
