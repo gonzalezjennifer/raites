@@ -3,6 +3,12 @@ body {
     padding: 0;
 }
 
+.principal{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}
+
 .barraTop {
     background-color: #e9d700;
     width: 100vw;
@@ -28,17 +34,8 @@ body {
     padding: 0;
 }
 
-.btnIniciar, .btnRegistrar {
-    width: 8vw;
-    height: 5vh;
-    margin-top: 10px;
-    font-family: 'Red Hat Display', sans-serif;
-}
-
-.btnRegistrar {
-    margin-left: 10px;
-}
-
-.btnIniciar {
-    margin-left: 65vw;
+.botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

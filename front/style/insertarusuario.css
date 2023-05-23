@@ -1,3 +1,9 @@
 body {
     font-family: 'Poppins', sans-serif!important;
 }
+
+.botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

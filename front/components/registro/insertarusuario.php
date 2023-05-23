@@ -14,13 +14,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@200&display=swap" rel="stylesheet">
     <title>Registro</title>
   </head>
-  <body style="background-color: #115372;">
+  <body style="background-color: #e9d700;">
     <!-- Section: Design Block -->
     <section class="text-center">
       <!-- Background image -->
       <div class="p-5 bg-image" style="
             background-image: url('../../img/headerregistro.jpg');
-            height: 200px;">
+            height: 180px;">
       </div>
       <!-- Background image -->
       <div class="card mx-4 mx-md-5 shadow-5-strong" style="
@@ -31,7 +31,7 @@
         <div class="card-body py-5 px-md-5">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-8">
-              <h2 class="fw-bold mb-3">Registro</h2>
+              <h2 class="fw-bold mb-1">Registro</h2>
               <div class="container mt-3">
         <div class="row">
             <div class="col-md-3"></div>
@@ -50,13 +50,13 @@
                       <option value="conductor">Dar raite</option>
                       <option value="pasajero">Pedir raite</option>
                     </select>
-                    <div id="contbut">
-                      <input type="submit" class="btn btn-info mb-2" name="btnregistro" style="width: 100%;">
-                      <a href="../../index.html" class="btn btn-light" style="width: 100%;">Regresar</a>
+                    <div id="botones" class="mt-4">
+                    <a href="../../index.html" class="btn btn-light" style="width: 40%; height: 10%;">Regresar</a>
+                    <input type="submit" name="btnregistro" class="btn btn-dark" value="Registro" style="width: 40%; height: 10%; margin-left: 10px;">
+                    <p class="mt-3">Already have an account? <a href="../login/login.php" class="text-black-50 fw-bold">Login</a></p>
                     </div>
                 </form>
             </div>
-            <div class="col-md-3"></div>
         </div>
     </div>
             </div>
