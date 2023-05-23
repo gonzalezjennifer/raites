@@ -3,7 +3,9 @@
     if(empty($_SESSION["id"])){
         header('location: ../login/login.php');
     }
-
+    if($_SESSION["tipousuario"] == 'pasajero'){
+      header('location: ../usuariopasajero/index.php');
+    }
     $user = $_SESSION["id"];
     echo "usuario conductor con nua:";
     echo $user;

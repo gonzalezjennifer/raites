@@ -1,7 +1,10 @@
 <?php
     session_start();
     if(empty($_SESSION["id"])){
-        header('location: ../login/login.php');
+      header('location: ../login/login.php');
+    }
+    if($_SESSION["tipousuario"] == 'conductor'){
+      header('location: ../usuarioconductor/index.php');
     }
 
     $user = $_SESSION["id"];
