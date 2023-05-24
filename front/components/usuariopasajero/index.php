@@ -22,6 +22,11 @@
   </head>
   <body>
 
+    <table>
+      <thead></thead>
+      <tbody></tbody>
+    </table>
+
     <a href="../../../back/login/control_logout.php" class="btn btn-danger">Salir</a>
     <a href="./verraites.php" class="btn btn-success">Apartar raite</a>  
 
