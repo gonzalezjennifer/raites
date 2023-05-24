@@ -11,7 +11,10 @@
         $hora = $_POST['hora'];
         $pasapor = $_POST['pasapor'];
         $lugares = $_POST['lugares'];
-        $query = "INSERT INTO raite (idraitero, origen, destino, hora, pasapor, lugares) VALUES('$idraitero', '$origen', '$destino', '$hora', '$pasapor', '$lugares')";
+        /*
+            IMPORTANTE SE LE AGREGO EL APARTADO DIA Y LUNES SOLO PARA PRUEBAS
+        */
+        $query = "INSERT INTO raite (idraitero, origen, destino, hora, pasapor, lugares, dias) VALUES('$idraitero', '$origen', '$destino', '$hora', '$pasapor', '$lugares', 'Lunes')";
         $resultado = mysqli_query($conexion, $query);
         if($resultado) {
             echo '<div class="alert alert-success">REGISTRO EXITOSO</div>';
