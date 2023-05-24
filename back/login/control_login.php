@@ -17,6 +17,7 @@
             $contrasena_desencriptada = $desencriptar($usu['contrasena']);
             if($usu['correo']==$usuario and $contrasena_desencriptada==$contrasena) {
                 $_SESSION["id"]=$usu['id'];
+                $_SESSION["tipousuario"]=$usu['tipousuario'];
                 if ($usu['tipousuario']=="conductor") {
                     //header( "Location: temp.php? user = $user" );
                     //header("Location:temp.php?user=".$user);
