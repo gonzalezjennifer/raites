@@ -15,7 +15,12 @@
 
     $existeraite = "SELECT * FROM apartar WHERE id_usuario = $user";
     $rexisteraite = mysqli_query($conexion, $existeraite);
-    $raitexiste=mysqli_fetch_array($rexisteraite);
+
+    $raitexiste = array();
+    while ($row = mysqli_fetch_array($rexisteraite)) {
+        $raitexiste[] = $row['id_raite'];
+    }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -41,10 +46,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Me falta un if para que no salga un raite que ya se aparto 
-                    pero ocupo la tabla donde se apartan los raites -->
                     <?php while($raite=mysqli_fetch_array($resultado)){ ?>
-                        <?php if( ($raite['lugares'] > 0) && ($raitexiste['id_raite']!=$raite['id'])): ?>
+                        <?php if( ($raite['lugares'] > 0) && !in_array($raite['id'], $raitexiste)): ?>
                             <tr>
                                 <td><?php echo $raite['origen'] ?></td>
                                 <td><?php echo $raite['destino'] ?></td>
