@@ -66,7 +66,7 @@
                 </section>
             </nav>
             </header>
-            <main style="margin-top: 13vh;">
+            <main style="margin-top: 15vh;">
                 <?php include("../../../back/perfil/upload.php"); ?>
                 <?php include("../../../back/perfil/editar.php"); ?>
 
