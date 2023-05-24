@@ -58,14 +58,14 @@
                                                 <!--
                                                     Formulario para apartar raite
                                                  -->
-                                                <form action="" method="post">
+                                                <form action="../../../back/raite/praite.php?id=<?php echo $raite['id']?>" method="post">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="exampleModalLabel">Confirmacion</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
                                                         <!-- No se bien que mensaje poner -->
-                                                        Esta por apartar un  raite para de <?php echo $raite['origen']?> a <?php echo $raite['destino']?>
+                                                        Esta por apartar un  raite de <b><?php echo $raite['origen']?></b> a <b><?php echo $raite['destino']?></b>
                                                         <br>
                                                         <p>Estas seguro que deseas continuar?</p>
 
