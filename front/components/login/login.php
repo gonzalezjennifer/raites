@@ -23,7 +23,7 @@
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top shadow">
                 <section class="container-md">
                     <a class="navbar-brand mb-0 h1 fs-3">
-                        <img class = "d-inline-block align-text-center" src="./img/logo160x160.png" width="50" height="50"/>
+                        <img class = "d-inline-block align-text-center" src="../../img/logo160x160.png" width="50" height="50"/>
                         <span class = "bee-logo">
                             <span class="text-warning">Bee</span>Raites <!--##ffe484-->
                         </span>
@@ -43,15 +43,15 @@
 
                     <form action="" method="post">
                         <div class="mb-4">
-                            <label class="form-label" for="email">Correo electrónico</label>
-                            <input class="form-control" name="email" type="email" placeholder="correo@ejemplo.com" required />
+                            <label class="form-label" for="correo">Correo electrónico</label>
+                            <input class="form-control" name="correo" type="email" placeholder="correo@ejemplo.com" required />
                         </div>
                         <div class="mb-4">
-                            <label class="form-label" for="password">Contraseña</label>
-                            <input class="form-control" name="password" type="password" required />
+                            <label class="form-label" for="contrasena">Contraseña</label>
+                            <input class="form-control" name="contrasena" type="password" required />
                         </div>
                         <div class="mb-4">
-                            <input class="btn btn-warning w-100 mt-4" type="submit" value="Iniciar"/>
+                            <input class="btn btn-warning w-100 mt-4" name="btningresar" type="submit" value="Iniciar"/>
                         </div>
                     </form>
                     <p class="text-white text-center">
