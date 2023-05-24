@@ -56,7 +56,7 @@
                     </form>
                     <p class="text-white text-center">
                         ¿Aún no tienes cuenta?
-                        <a href="" style="text-decoration: none;">
+                        <a href="../registro/insertarusuario.php" style="text-decoration: none;">
                             Regístrate aquí
                         </a>
                     </p>
