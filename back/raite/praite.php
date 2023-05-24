@@ -25,7 +25,7 @@
     $coincidencias = array_intersect($dias1, $dias2);
 
     if($resultado2 and !empty($coincidencias)){
-        echo '<div class="alert alert-danger">Ya tienes raites para alguno de los dias que se sucede este raite</div>';
+        echo '<div class="alert alert-danger">Ya tienes raites para alguno de los dias que sucede este raite</div>';
     } else {
         if ($num_conflictos > 0) {
             echo "No se puede";
