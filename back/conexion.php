@@ -1,7 +1,7 @@
 <?php 
     function conectar() {
         $host = "localhost:8889";
-        // $host = "localhost:3306";
+        //$host = "localhost:3306; 
         $user = "root";
         $password = "root";
         $db = "raites";
