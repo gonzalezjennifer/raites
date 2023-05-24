@@ -10,6 +10,12 @@
     // $user = $_GET['user'];
     echo "usuario conductor con nua:";
     echo $user;
+
+    include '../../../back/conexion.php';
+    $conexion = conectar();
+
+    $sql = "SELECT * FROM raite WHERE idraitero = $user";
+    $query = mysqli_query($conexion, $sql);
 ?>
 
 <!doctype html>
@@ -29,6 +35,57 @@
         <p>Raites</p>
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button>
     </div>
+
+    <div class="mx-auto" style="width: 80%">
+      <table class="table bg-warning" style="color:white; text-align:center; vertical-align:middle; border:7px white solid">
+        <thead class="bg-dark" style="color:white">
+          <tr>
+            <!-- <th scope="col">ID</th>
+            <th scope="col">ID Conductor</th> -->
+            <th scope="col">Origen</th>
+            <th scope="col">Destino</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Pasa por</th>
+            <th scope="col">Lugares</th>
+            <th scope="col">Pasajeros</th>
+          </tr>
+        </thead>
+        <tbody class="bg-warning" style="color:white;">
+            <?php while($row = mysqli_fetch_array($query)){ ?>
+
+              <tr style=" border:7px white solid; margin:2px" >
+                <td><?php echo $row['origen'] ?></td>
+                <td><?php echo $row['destino'] ?></td>
+                <td><?php echo $row['hora'] ?></td>
+                <td style="width: 28%;"><?php echo $row['pasapor'] ?></td>
+                <td><?php echo $row['lugares'] ?></td>
+
+                <!-- Pasajeros -->
+                <?php
+                  $sqlPasajeros = "SELECT nombre, apaterno, numero 
+                    FROM usuario 
+                    INNER JOIN apartar 
+                    ON apartar.id_usuario = usuario.id 
+                    WHERE apartar.id_raite = $row[id]";
+
+                  $queryPasajeros = mysqli_query($conexion, $sqlPasajeros);
+                ?>
+
+                <td style="width: 25%; text-align:left"> 
+                  <?php while($pasajeros = mysqli_fetch_array($queryPasajeros)){ ?>
+                    <p style="padding: 0; margin:0"><?php echo $pasajeros['nombre'] . " " . $pasajeros['apaterno'] . " "?>
+                    <a href="https://wa.me/<?php echo $pasajeros["numero"] ?>"><?php echo $pasajeros["numero"] ?><img src="../../img/whatsapp.svg" alt=""> </a> </p>
+                  <?php } ?>
+                </td>
+
+              </tr>
+             
+            <?php } ?>
+        </tbody>
+
+      </table>
+    </div>
+
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -14,7 +14,7 @@
     $res = mysqli_query($conexion, $sql);
     $apar = mysqli_fetch_array($res);
 
-    $sql3 = "SELECT * FROM raite t INNER JOIN apartar ap ON ap.id_raite = t.id WHERE ap.id_pasa = $id_pasa";
+    $sql3 = "SELECT * FROM raite t INNER JOIN apartar ap ON ap.id_raite = t.id WHERE ap.id_usuario = $id_pasa";
     $resultado2 = mysqli_query($conexion, $sql3);
     $ya = mysqli_fetch_array($resultado2);
 
@@ -35,7 +35,7 @@
         } else {
             echo "Si jala";
             if($rep){
-                $query = "INSERT INTO apartar(id_raite, id_pasa) VALUES ('$id_raite', '$id_pasa') ";
+                $query = "INSERT INTO apartar(id_raite, id_usuario) VALUES ('$id_raite', '$id_pasa') ";
                 $resultado = mysqli_query($conexion, $query);
                 if ($resultado){
                     $sql2 = "SELECT * FROM apartar WHERE id_raite='$id_raite'";
