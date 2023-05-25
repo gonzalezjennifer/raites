@@ -24,7 +24,7 @@
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top shadow">
                 <section class="container-md">
                     <a class="navbar-brand mb-0 h1 fs-3">
-                        <img class = "d-inline-block align-text-center" src="./img/logo160x160.png" width="50" height="50"/>
+                        <img class = "d-inline-block align-text-center" src="../../img/logo160x160.png" width="50" height="50"/>
                         <span class = "bee-logo">
                             <span class="text-warning">Bee</span>Raites <!--##ffe484-->
                         </span>
@@ -72,7 +72,7 @@
                               </select>
                         </div>
                         <div class="mb-4">
-                            <input class="btn btn-warning w-100 mt-4" type="submit" value="Crear cuenta"/>
+                            <input class="btn btn-warning w-100 mt-4" type="submit" value="Crear cuenta" name="btnregistro"/>
                         </div>
                     </form>
                     <p class="text-white text-center">
