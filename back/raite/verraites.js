@@ -1,3 +1,8 @@
+const alerta = document.getElementById('noap')
+const btnapartar = document.getElementById('btnapartar')
+
+
+
 $(document).ready(function() {
     $('#tablaraites').DataTable({
         "aLengthMenu": [[5, 10, 15, -1], [5, 10, 15, "Todos"]],
@@ -15,3 +20,4 @@ $(document).ready(function() {
         
     });
   });
+
