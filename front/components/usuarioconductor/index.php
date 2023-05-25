@@ -147,7 +147,48 @@
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
-              
+
+
+
+              <div class="btn-group-vertical form-control mb-3">
+                <button class="btn" type="button" id="dropdownMenuClickable" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
+                  Elige los dias de tu raite
+                </button>
+                <ul class="dropdown-menu form-control mb-3 align-center" aria-labelledby="dropdownMenuClickable">
+                  <li><label class="btn btn-primary dropdown-item">
+                      <input class="form-check-input" type="checkbox" name="Lunes" value="Lunes"> Lunes
+                    </label>
+                  </li>
+                  <li><label class="btn btn-primary dropdown-item">
+                      <input class="form-check-input" type="checkbox" name="Martes" value="Martes" > Martes
+                    </label>
+                  </li>
+                  <li><label class="btn btn-primary dropdown-item">
+                      <input class="form-check-input" type="checkbox" name="Miercoles" value="Miercoles" > Miercoles
+                    </label>
+                  </li>
+                  <li><label class="btn btn-primary dropdown-item">
+                      <input class="form-check-input" type="checkbox" name="Jueves" value="Jueves" > Jueves
+                    </label>
+                  </li>
+                  <li><label class="btn btn-primary dropdown-item">
+                      <input class="form-check-input" type="checkbox" name="Viernes" value="Viernes" > Viernes
+                    </label>
+                  </li>
+                  <li><label class="btn btn-primary dropdown-item">
+                      <input class="form-check-input" type="checkbox" name="Sabado" value="Sabado" > Sabado
+                    </label>
+                  </li>
+                  <li><label class="btn btn-primary dropdown-item">
+                      <input class="form-check-input" type="checkbox" name="Domingo" value="Domingo" > Domingo
+                    </label>
+                  </li>
+                </ul>
+              </div>
+
+
+
+
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Registar</button>

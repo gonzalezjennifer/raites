@@ -27,13 +27,6 @@
     if($resultado2 and !empty($coincidencias)){
         echo '<div class="alert alert-danger">Ya tienes raites para alguno de los dias que sucede este raite</div>';
     } else {
-        if ($num_conflictos > 0) {
-            echo "No se puede";
-            echo $dias[0];
-            echo $da[0];
-            echo $num_conflictos;
-        } else {
-            echo "Si jala";
             if($rep){
                 $query = "INSERT INTO apartar(id_raite, id_usuario) VALUES ('$id_raite', '$id_pasa') ";
                 $resultado = mysqli_query($conexion, $query);
@@ -54,6 +47,5 @@
                     echo '<div class="alert alert-danger">ERROR INESPERADO, INTENTE MAS TARDE</div>';
                 }
         }
-    }
     /**/
 ?>
