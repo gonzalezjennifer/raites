@@ -106,7 +106,7 @@
                     <td style="width: 25%; text-align:left"> 
                       <?php while($pasajeros = mysqli_fetch_array($queryPasajeros)){ ?>
                         <p style="padding: 0; margin:0"><?php echo $pasajeros['nombre'] . " " . $pasajeros['apaterno'] . " "?>
-                        <a href="https://wa.me/<?php echo $pasajeros["numero"] ?>"><?php echo $pasajeros["numero"] ?><img src="../../img/whatsapp.svg" alt=""> </a> </p>
+                        <a href="https://wa.me/52<?php echo $pasajeros["numero"] ?>"><?php echo $pasajeros["numero"] ?><img src="../../img/whatsapp.svg" alt=""> </a> </p>
                       <?php } ?>
                     </td>
                   </tr>
