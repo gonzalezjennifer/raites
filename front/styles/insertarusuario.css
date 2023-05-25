@@ -18,12 +18,12 @@
     cursor:pointer
 }
 
-.login{
-    width: 350px;
+.register{
+    width: 400px;
     border: 1px solid #555;
     border-radius: 10px;
     padding: 40px;
-    margin-top: 75px;
+    margin-top: 125px;
     font-family: 'Red Hat Display', sans-serif;
 }
 
@@ -46,10 +46,4 @@
     background-color: #777;
     color: #FFF;
     box-shadow: none;
-}
-
-@media (max-height: 620px){
-    .login{
-        margin-top: 100px;
-    }
 }

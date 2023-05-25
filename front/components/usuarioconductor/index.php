@@ -27,6 +27,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../../style/usuarioconductor.css">
     <title>Inicio</title>
   </head>
@@ -65,64 +66,54 @@
           </section>
       </nav>
     </header>
-    <main class="container">
-      <!-- <a href="../draite/raite.php?user=<?php echo $user ?>" class="btn btn-primary">Ofrecer raite</a> -->
-
-      <div class="Cabecera mb-3" style="display:flex;">
-          <h3 style="margin-left: 9vw;">Raites</h3>
-          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left: 54vw;">Nuevo Raite</button>
+    <main>
+    <div class="container">
+      <div class="Cabecera mb-3" style="display:flex; width:100vw!important;">
+        <h3>Raites</h3>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left: 72vw;">Nuevo Raite</button>
       </div>
+            <table id="tablaraites" class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th style="vertical-align: middle;">Origen</th>
+                        <th style="vertical-align: middle;">Destino</th>
+                        <th style="vertical-align: middle;">Hora</th>
+                        <th style="vertical-align: middle;">Pasa por</th>
+                        <th style="vertical-align: middle;">Lugares</th>
+                        <th style="vertical-align: middle;">Pasajeros</th>
+                    </tr>
+                  </thead>
+                <tbody>
+                <?php while($row = mysqli_fetch_array($query)){ ?>
+                  <tr>
+                    <td><?php echo $row['origen'] ?></td>
+                    <td><?php echo $row['destino'] ?></td>
+                    <td><?php echo $row['hora'] ?></td>
+                    <td><?php echo $row['pasapor'] ?></td>
+                    <td><?php echo $row['lugares'] ?></td>
 
-      <div class="mx-auto" style="width: 80%">
-        <table class="table table-striped table-dark" style="color:white; text-align:center; vertical-align:middle; border-collapse: collapse!important;">
-          <thead style="color:white">
-            <tr>
-              <!-- <th scope="col">ID</th>
-              <th scope="col">ID Conductor</th> -->
-              <th scope="col">Origen</th>
-              <th scope="col">Destino</th>
-              <th scope="col">Hora</th>
-              <th scope="col">Pasa por</th>
-              <th scope="col">Lugares</th>
-              <th scope="col">Pasajeros</th>
-            </tr>
-          </thead>
-          <tbody class="table-warning" style="color:black;">
-              <?php while($row = mysqli_fetch_array($query)){ ?>
+                    <!-- Pasajeros -->
+                    <?php
+                      $sqlPasajeros = "SELECT nombre, apaterno, numero 
+                        FROM usuario 
+                        INNER JOIN apartar 
+                        ON apartar.id_usuario = usuario.id 
+                        WHERE apartar.id_raite = $row[id]";
 
-                <tr style=" border:3px white solid; margin:2px" >
-                  <td><?php echo $row['origen'] ?></td>
-                  <td><?php echo $row['destino'] ?></td>
-                  <td><?php echo $row['hora'] ?></td>
-                  <td style="width: 28%;"><?php echo $row['pasapor'] ?></td>
-                  <td><?php echo $row['lugares'] ?></td>
+                      $queryPasajeros = mysqli_query($conexion, $sqlPasajeros);
+                    ?>
 
-                  <!-- Pasajeros -->
-                  <?php
-                    $sqlPasajeros = "SELECT nombre, apaterno, numero 
-                      FROM usuario 
-                      INNER JOIN apartar 
-                      ON apartar.id_usuario = usuario.id 
-                      WHERE apartar.id_raite = $row[id]";
-
-                    $queryPasajeros = mysqli_query($conexion, $sqlPasajeros);
-                  ?>
-
-                  <td style="width: 25%; text-align:left"> 
-                    <?php while($pasajeros = mysqli_fetch_array($queryPasajeros)){ ?>
-                      <p style="padding: 0; margin:0"><?php echo $pasajeros['nombre'] . " " . $pasajeros['apaterno'] . " "?>
-                      <a href="https://wa.me/<?php echo $pasajeros["numero"] ?>"><?php echo $pasajeros["numero"] ?><img src="../../img/whatsapp.svg" alt=""> </a> </p>
-                    <?php } ?>
-                  </td>
-
-                </tr>
-              
-              <?php } ?>
-          </tbody>
-
-        </table>
-      </div>
-
+                    <td style="width: 25%; text-align:left"> 
+                      <?php while($pasajeros = mysqli_fetch_array($queryPasajeros)){ ?>
+                        <p style="padding: 0; margin:0"><?php echo $pasajeros['nombre'] . " " . $pasajeros['apaterno'] . " "?>
+                        <?php echo $pasajeros["numero"] ?><a href="https://wa.me/52<?php echo $pasajeros["numero"] ?>"><img src="../../img/whatsapp.svg" alt="" style="margin-left: 5px;"> </a> </p>
+                      <?php } ?>
+                    </td>
+                  </tr>
+                <?php } ?>
+                </tbody>
+            </table>
+        </div>
 
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -147,7 +138,48 @@
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
-              
+
+
+
+              <div class="btn-group-vertical form-control mb-3">
+                <button class="btn" type="button" id="dropdownMenuClickable" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
+                  Elige los dias de tu raite
+                </button>
+                <ul class="dropdown-menu form-control mb-3 align-center" aria-labelledby="dropdownMenuClickable">
+                  <li><label class="btn btn-primary dropdown-item">
+                      <input class="form-check-input" type="checkbox" name="Lunes" value="Lunes"> Lunes
+                    </label>
+                  </li>
+                  <li><label class="btn btn-primary dropdown-item">
+                      <input class="form-check-input" type="checkbox" name="Martes" value="Martes" > Martes
+                    </label>
+                  </li>
+                  <li><label class="btn btn-primary dropdown-item">
+                      <input class="form-check-input" type="checkbox" name="Miercoles" value="Miercoles" > Miercoles
+                    </label>
+                  </li>
+                  <li><label class="btn btn-primary dropdown-item">
+                      <input class="form-check-input" type="checkbox" name="Jueves" value="Jueves" > Jueves
+                    </label>
+                  </li>
+                  <li><label class="btn btn-primary dropdown-item">
+                      <input class="form-check-input" type="checkbox" name="Viernes" value="Viernes" > Viernes
+                    </label>
+                  </li>
+                  <li><label class="btn btn-primary dropdown-item">
+                      <input class="form-check-input" type="checkbox" name="Sabado" value="Sabado" > Sabado
+                    </label>
+                  </li>
+                  <li><label class="btn btn-primary dropdown-item">
+                      <input class="form-check-input" type="checkbox" name="Domingo" value="Domingo" > Domingo
+                    </label>
+                  </li>
+                </ul>
+              </div>
+
+
+
+
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Registar</button>
@@ -160,6 +192,10 @@
       </div>
     </main>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="raites.js"></script>
   </body>
 </html>
