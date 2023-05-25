@@ -23,7 +23,7 @@
             <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top shadow">
                 <section class="container-md">
                     <a class="navbar-brand mb-0 h1 fs-3">
-                        <img class = "d-inline-block align-text-center" src="./img/logo160x160.png" width="50" height="50"/>
+                        <img class = "d-inline-block align-text-center" src="../../img/logo160x160.png" width="50" height="50"/>
                         <span class = "bee-logo">
                             <span class="text-warning">Bee</span>Raites <!--##ffe484-->
                         </span>
@@ -51,12 +51,14 @@
                             <input class="form-control" name="contrasena" type="password" required />
                         </div>
                         <div class="mb-4">
-                            <input class="btn btn-warning w-100 mt-4" type="submit" value="Iniciar"/>
+                            <input class="btn btn-warning w-100 mt-4" name="btningresar" type="submit" value="Iniciar"/>
                         </div>
                     </form>
                     <p class="text-white text-center">
                         ¿Aún no tienes cuenta?
-                        <a href="components/registro/insertarusuario.php" style="text-decoration: none;">
+
+                        <a href="../registro/insertarusuario.php" style="text-decoration: none;">
+
                             Regístrate aquí
                         </a>
                     </p>
