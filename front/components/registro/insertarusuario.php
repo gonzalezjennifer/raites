@@ -77,7 +77,7 @@
                     </form>
                     <p class="text-white text-center">
                         ¿Ya tienes una cuenta?
-                        <a href="components/login/login.php" style="text-decoration: none;">
+                        <a href="../login/login.php" style="text-decoration: none;">
                             Inicia sesión aquí
                         </a>
                     </p>
