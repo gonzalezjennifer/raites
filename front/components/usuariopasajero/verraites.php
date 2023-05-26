@@ -71,6 +71,7 @@
     </header>    
     <main>
     <div class="container mt-5 ">
+        <div id="noap"><?php include '../../../back/raite/praite.php' ?></div>
         <div class="Cabecera mb-3" style="display:flex; width:100vw!important;">
             <h3>Raites disponibles</h3>
         </div>
@@ -106,7 +107,7 @@
                                                 <!--
                                                     Formulario para apartar raite
                                                  -->
-                                                <form action="../../../back/raite/praite.php?id=<?php echo $raite['id']?>" method="post">
+                                                <form action="" method="post">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="exampleModalLabel">Confirmacion</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -117,11 +118,11 @@
                                                         <br>
                                                         <p>Estas seguro que deseas continuar?</p>
 
-                                                        <input type="text" name="idraite" class="d-none" value="<?php echo $raite['id']?>" disabled>
+                                                        <input type="text" name="idraite" class="d-none" value="<?php echo $raite['id']?>">
                                                         <input type="text" name="idpasajero" class="d-none" value="<?php echo $user?>" disabled>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <input type="submit" class="btn btn-primary" name="btnapartar" value="Aceptar">
+                                                        <input type="submit" class="btn btn-primary" name="btnapartar" value="Aceptar" id="btnapartar">
                                                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>    
                                                     </div>
                                                 </form>
