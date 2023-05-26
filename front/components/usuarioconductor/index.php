@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include '../../../back/conexion.php';
     if(empty($_SESSION["id"])){
         header('location: ../login/login.php');
     }
@@ -11,7 +12,7 @@
     echo "usuario conductor con nua:";
     echo $user;
 
-    include '../../../back/conexion.php';
+    
     $conexion = conectar();
 
     $sql = "SELECT * FROM raite WHERE idraitero = $user";
@@ -68,6 +69,7 @@
     </header>
     <main>
     <div class="container">
+    <div><?php include '../../../back/raite/draite.php' ?></div>
       <div class="Cabecera mb-3" style="display:flex; width:100vw!important;">
         <h3>Raites</h3>
         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left: 72vw;">Nuevo Raite</button>
@@ -124,8 +126,9 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
+            
 
-            <form action="../../../back/raite/draite.php" method="POST" class="form">
+            <form action="" method="POST" class="form">
               <input type="text" disabled="disabled" name="idRaitero" placeholder="<?php echo 'ID: ' . $user ?>" value="<?php $user ?>" class="form-control mb-3">
               <input type="text" name="origen" placeholder="Origen" class="form-control mb-3">
               <input type="text" name="destino" placeholder="Destino" class="form-control mb-3">
@@ -138,9 +141,6 @@
                 <option value="3">3</option>
                 <option value="4">4</option>
               </select>
-
-
-
               <div class="btn-group-vertical form-control mb-3">
                 <button class="btn" type="button" id="dropdownMenuClickable" data-bs-toggle="dropdown" data-bs-auto-close="false" aria-expanded="false">
                   Elige los dias de tu raite
@@ -176,13 +176,9 @@
                   </li>
                 </ul>
               </div>
-
-
-
-
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Registar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
+                <input type="submit" value="Registrar" class="btn btn-primary" id="btndarraite" name="btndarraite"></input>
               </div>
 
             </form>

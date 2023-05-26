@@ -1,10 +1,8 @@
 <?php
-    session_start();
-    include_once "../conexion.php";
-
-    $id_raite = $_GET['id'];
-    $id_pasa = $_SESSION["id"];
-    $conexion = conectar();
+    if(!empty($_POST["btnapartar"])){
+        $id_raite = $_POST['idraite'];
+        $id_pasa = $_SESSION["id"];
+        $conexion = conectar();
 
     $que = "SELECT * FROM apartar";
     $rep = mysqli_query($conexion, $que);
@@ -24,8 +22,12 @@
 
     $coincidencias = array_intersect($dias1, $dias2);
 
-    if($resultado2 and !empty($coincidencias)){
-        echo '<div class="alert alert-danger">Ya tienes raites para alguno de los dias que sucede este raite</div>';
+    if($resultado2 and $apar['hora']==$ya['hora'] ){
+        if(!empty($coincidencias)){
+            foreach ($coincidencias as $palabra) {
+            echo '<div class="alert alert-danger">El dia '.$palabra .' a las '.$ya['hora'].' horas ya tienes un raite activo</div>';
+        }
+    }
     } else {
             if($rep){
                 $query = "INSERT INTO apartar(id_raite, id_usuario) VALUES ('$id_raite', '$id_pasa') ";
@@ -47,5 +49,6 @@
                     echo '<div class="alert alert-danger">ERROR INESPERADO, INTENTE MAS TARDE</div>';
                 }
         }
+    }
     /**/
 ?>
