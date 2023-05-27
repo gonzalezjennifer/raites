@@ -12,6 +12,11 @@
             $contrasena_encriptada = $encriptar($contrasena);
             $numero = $_POST['numero'];
 
+            $querynumero = "SELECT numero FROM usuario WHERE id=$user_id";
+            $resulnumero = mysqli_query($conexion, $querynumero);
+            $numeroriginal = mysqli_fetch_array($resulnumero);
+            $originalnumero = $numeroriginal['numero'];
+
             if (strlen($contrasena)<8) {
                 echo '<div class="alert alert-danger">LA CONTRASEÑA DEBE CONTENER MINIMO 8 CARACTERES</div>';
             } elseif (strlen($numero)<10 || strlen($numero)>10){
@@ -24,6 +29,8 @@
                     $resultado = mysqli_query($conexion, $query);
                     $usu=mysqli_fetch_array($resultado);
                     if($usu['numero']==$numero) {
+                        $querynum = "UPDATE usuario SET numero='$originalnumero' WHERE id=$user_id";
+                        $resulnum = mysqli_query($conexion, $querynum);
                         echo '<div class="alert alert-danger">NUMERO TELEFONICO YA REGISTRADO</div>';
                     } else {
                         $query = "UPDATE usuario SET nombre='$nombre', 

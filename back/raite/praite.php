@@ -41,7 +41,8 @@
                         $actua = "UPDATE raite SET lugares=lugares - '1' WHERE id='$id_raite'";
                         $corre = mysqli_query($conexion, $actua);
                     }
-                header("location: ../../front/components/usuariopasajero/index.php");
+                header("location: ./index.php");
+            
                 }
                 echo '<div class="alert alert-success">REGISTRO EXITOSO</div>';
                 

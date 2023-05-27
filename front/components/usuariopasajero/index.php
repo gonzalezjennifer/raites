@@ -79,7 +79,7 @@
                       <th style="vertical-align: middle;">Destino</th>
                       <th style="vertical-align: middle;">Hora</th>
                       <th style="vertical-align: middle;">Dias</th>
-                      <th style="vertical-align: middle;">Contacto del conductor</th>
+                      <th style="vertical-align: middle;">Contacto y nombre del conductor</th>
                       <th style="vertical-align: middle;"> </th>
                     </tr>
                 </thead>
@@ -92,11 +92,13 @@
                       <td><?php echo $raite['dias'] ?></td>
                       <?php
                         $idraite = $raite['id'];
-                        $contactos = "SELECT u.numero FROM usuario u JOIN raite r ON u.id = r.idraitero WHERE r.id = $idraite";
+                        $contactos = "SELECT u.numero, u.nombre, u.apaterno FROM usuario u JOIN raite r ON u.id = r.idraitero WHERE r.id = $idraite";
                         $rcontactos = mysqli_query($conexion, $contactos);
                         $contacto=mysqli_fetch_array($rcontactos)
                       ?>
-                      <td><?php echo $contacto['numero'] ?> <a href="https://wa.me/52<?php echo $contacto['numero'] ?>"><img src="../../img/whatsapp.svg" style="margin-left: 3px;"> </a></td>
+                      <td>
+                        <?php echo $contacto['nombre'].' '. $contacto['apaterno'].' - '.$contacto['numero'] ?> <a href="https://wa.me/52<?php echo $contacto['numero'] ?>"><img src="../../img/whatsapp.svg" style="margin-left: 3px;"> </a>
+                      </td>
                       <td>
                           <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#raite<?php echo $raite['id']?>">
                               Cancelar raite

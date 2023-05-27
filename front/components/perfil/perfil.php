@@ -91,11 +91,7 @@
                                 <h5 class="mt-2 mb-0"><?php echo $usuario['nombre'] . " " . $usuario['apaterno'] . " " . $usuario['amaterno'] ?></h5>
                                 <span>Numero: <?php echo $usuario['numero']?></span>
                                 
-                                <div class="px-4 mt-1">
-                                    <p class="fonts">Constraseña: <?php $pssdecript = $desencriptar($usuario['contrasena']); echo $pssdecript ?> </td> </p>
-                                </div>
-                                
-                                <div class="buttons">
+                                <div class="buttons mt-3">
                                     <button type="button" class="btn btn-outline-primary px-4" data-bs-toggle="modal" data-bs-target="#modalfoto">
                                         Editar imagen de perfil
                                     </button>
@@ -141,7 +137,7 @@
                                     <input type="text" name="nombre" placeholder="Nombre" class="form-control mb-3" value="<?php echo $usuario['nombre']?>">
                                     <input type="text" name="apaterno" placeholder="Apellido paterno" class="form-control mb-3" value="<?php echo $usuario['apaterno']?>">
                                     <input type="text" name="amaterno" placeholder="Apellido materno" class="form-control mb-3" value="<?php echo $usuario['amaterno']?>">
-                                    <input type="password" name="contrasena" placeholder="Ingresa la contraseña nueva" class="form-control mb-3">
+                                    <input type="password" name="contrasena" placeholder="Ingresa la contraseña nueva" class="form-control mb-3" value="<?php $pssdecript = $desencriptar($usuario['contrasena']); echo $pssdecript ?>">
                                     <input type="number" name="numero" placeholder="Numero Telefonico" class="form-control mb-3" value="<?php echo $usuario['numero']?>">
                                 </div>
                                 <div class="modal-footer">
