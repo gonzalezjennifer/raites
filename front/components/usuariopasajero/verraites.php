@@ -119,6 +119,7 @@
                                                         <p>Estas seguro que deseas continuar?</p>
 
                                                         <input type="text" name="idraite" class="d-none" value="<?php echo $raite['id']?>">
+                                                        <input type="text" name="hora" class="d-none" value="<?php echo $raite['hora']?>">
                                                         <input type="text" name="idpasajero" class="d-none" value="<?php echo $user?>" disabled>
                                                     </div>
                                                     <div class="modal-footer">

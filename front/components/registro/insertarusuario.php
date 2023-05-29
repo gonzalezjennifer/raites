@@ -61,6 +61,10 @@
                             <input class="form-control" name="contrasena" type="password" required />
                         </div>
                         <div class="mb-4">
+                            <label class="form-label" for="vercontrasena">Repite tu Contraseña</label>
+                            <input class="form-control" name="vercontrasena" type="password" required />
+                        </div>
+                        <div class="mb-4">
                             <label class="form-label" for="numero">Teléfono</label>
                             <input class="form-control" name="numero" type="tel" />
                         </div>

@@ -9,6 +9,7 @@
             $amaterno = $_POST['amaterno'];
             $correo = $_POST['correo'];
             $contrasena = $_POST['contrasena'];
+            $confirm = $_POST['vercontrasena'];
             $contrasena_encriptada = $encriptar($contrasena);
             $numero = $_POST['numero'];
             $tipousuario = $_POST['tipousuario'];
@@ -22,6 +23,8 @@
                 echo '<div class="alert alert-danger">LA CONTRASEÑA DEBE CONTENER MINIMO 8 CARACTERES</div>';
             } elseif (strlen($numero)<10 || strlen($numero)>10){
                 echo '<div class="alert alert-danger">EL NUMERO TELEFONICO DEBE CONTENER 10 DIGITOS</div>';
+            } elseif ($contrasena != $confirm) {
+                echo '<div class="alert alert-danger">LAS CONTRASEÑAS NO COINCIDEN</div>';
             } else {
                 $query = "SELECT * FROM usuario WHERE numero='$numero'";
                 $resultado = mysqli_query($conexion, $query);
