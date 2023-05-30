@@ -28,9 +28,9 @@
 
         $coincidencias = array_intersect($dias1, $dias2);
 
-        if($result1 AND !empty($coincidencias)){
+        if($revisar1['hora']==$hora AND !empty($coincidencias)){
             foreach($coincidencias as $palabra) {
-                echo '<div class="alert alert-danger text-center text-uppercase">El dia '.$palabra .' a las '.$hora.' horas ya estas ofreciendo un raite</div>';
+                echo '<div class="alert alert-danger text-center">El dia '.$palabra .' a las '.$hora.' horas ya estas ofreciendo un raite</div>';
             }
         }
         else{
