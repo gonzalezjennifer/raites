@@ -24,6 +24,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../../style/usuarioconductor.css">
     <title>Inicio</title>
   </head>
@@ -63,7 +64,7 @@
       </nav>
     </header>
     <main>
-    <div class="container">
+    <div class="container" style="padding-top: 12px;">
     <div><?php include '../../../back/raite/draite.php' ?></div>
       <div class="Cabecera mb-3" style="display:flex; width:100vw!important;">
         <h3>Raites</h3>
@@ -75,9 +76,11 @@
                         <th style="vertical-align: middle;">Origen</th>
                         <th style="vertical-align: middle;">Destino</th>
                         <th style="vertical-align: middle;">Hora</th>
+                        <th style="vertical-align: middle;">Días</th>
                         <th style="vertical-align: middle;">Pasa por</th>
                         <th style="vertical-align: middle;">Lugares</th>
                         <th style="vertical-align: middle;">Pasajeros</th>
+                        <th style="vertical-align: middle;">Cancelar</th>
                     </tr>
                   </thead>
                 <tbody>
@@ -86,6 +89,7 @@
                     <td><?php echo $row['origen'] ?></td>
                     <td><?php echo $row['destino'] ?></td>
                     <td><?php echo $row['hora'] ?></td>
+                    <td><?php echo $row['dias'] ?></td>
                     <td><?php echo $row['pasapor'] ?></td>
                     <td><?php echo $row['lugares'] ?></td>
 
@@ -102,10 +106,39 @@
 
                     <td style="width: 25%; text-align:left"> 
                       <?php while($pasajeros = mysqli_fetch_array($queryPasajeros)){ ?>
-                        <p style="padding: 0; margin:0"><?php echo $pasajeros['nombre'] . " " . $pasajeros['apaterno'] . " "?>
+                        <p style="padding: 0; margin:0"><?php echo $pasajeros['nombre'] . " " . $pasajeros['apaterno'] . " - "?>
                         <?php echo $pasajeros["numero"] ?><a href="https://wa.me/52<?php echo $pasajeros["numero"] ?>"><img src="../../img/whatsapp.svg" alt="" style="margin-left: 5px;"> </a> </p>
                       <?php } ?>
                     </td>
+
+                    <td style="text-align:center;">
+                      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#raite<?php echo $row['id']?>">
+                        <i class="bi bi-trash3-fill"></i>
+                      </button>
+                      <div class="modal fade" id="raite<?php echo $row['id']?>" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                          <div class="modal-dialog">
+                              <div class="modal-content">
+                                  <form action="../../../back/raite/ccraite.php" method="post">
+                                      <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel">Confirmacion</h5>
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body text-center">
+                                          <!-- No se bien que mensaje poner -->
+                                          Esta por cancelar un  raite de <b><?php echo $row['origen']?></b> a <b><?php echo $row['destino']?></b>
+
+                                          <input type="text" name="idraite" class="d-none" value="<?php echo $row['id']?>">
+                                      </div>
+                                      <div class="modal-footer">
+                                      <input type="submit" class="btn btn-primary mb-2" value="Aceptar">
+                                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>    
+                                      </div>
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+                    </td>
+
                   </tr>
                 <?php } ?>
                 </tbody>
