@@ -18,26 +18,27 @@
         $sabado = $_POST['Sabado'];
         $domingo = $_POST['Domingo'];
 
+        $dias = $lunes . " " . $martes . " " . $miercoles . " " . $jueves ." " . $viernes . " " . $sabado. " ". $domingo ;
+
         $sql = "SELECT * FROM raite WHERE idraitero='$idraitero' AND hora='$hora'";
         $result1 = mysqli_query($conexion, $sql);
-        $revisar1 = mysqli_fetch_array($result1);
-        $dias1 = str_word_count($revisar1['dias'], 1);
-        
-        $dias = $lunes . " " . $martes . " " . $miercoles . " " . $jueves ." " . $viernes . " " . $sabado. " ". $domingo ;
-        $dias2 = str_word_count($dias, 1);
-
-        $coincidencias = array_intersect($dias1, $dias2);
-
-        if($revisar1['hora']==$hora AND !empty($coincidencias)){
-            foreach($coincidencias as $palabra) {
-                echo '<div class="alert alert-danger text-center">El dia '.$palabra .' a las '.$hora.' horas ya estas ofreciendo un raite</div>';
-            }
-        }
-        else{
-            $query = "INSERT INTO raite (idraitero, origen, destino, hora, pasapor, lugares, dias) VALUES('$idraitero', '$origen', '$destino', '$hora', '$pasapor', '$lugares', '$dias')";
-            $resultado = mysqli_query($conexion, $query);
+        if (mysqli_num_rows($result1) > 0) {
+            $revisar1 = mysqli_fetch_array($result1);
+            $dias1 = str_word_count($revisar1['dias'], 1);
+            $dias2 = str_word_count($dias, 1);
+            $coincidencias = array_intersect($dias1, $dias2);
+    
+            if($revisar1 AND !empty($coincidencias)){
+                foreach($coincidencias as $palabra) {
+                    echo '<div class="alert alert-danger text-center">El dia '.$palabra .' a las '.$hora.' horas ya estas ofreciendo un raite</div>';
+                }
+            }   
+        } else{
+            $query1 = "INSERT INTO raite (idraitero, origen, destino, hora, pasapor, lugares, dias) VALUES('$idraitero', '$origen', '$destino', '$hora', '$pasapor', '$lugares', '$dias')";
+            $resultado = mysqli_query($conexion, $query1);
             if($resultado) {
                 echo '<div class="alert alert-success text-center">REGISTRO EXITOSO</div>';
+                header("location: index.php");
             } else {
                 echo '<div class="alert alert-danger text-center">ERROR INESPERADO, INTENTE MAS TARDE</div>';
             }
