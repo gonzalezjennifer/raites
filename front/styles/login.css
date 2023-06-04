@@ -38,13 +38,14 @@
 
 .form-control {
     background-color: #555;
-    color: #FFF;
+    color: #adb5bd;
     border: none;
   }
 
 .form-control:focus{
-    background-color: #777;
+    background-color: #0d1117;
     color: #FFF;
+    border: 1px solid #ffc107;
     box-shadow: none;
 }
 

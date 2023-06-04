@@ -1,0 +1,170 @@
+body{
+    font-family: 'Red Hat Display', sans-serif;;
+}
+
+.navbar{
+    box-shadow: 0px 15px 25px rgb(0, 0, 0, 0);
+}
+
+.navbar-toggler{
+    border: none !important;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
+.bee-logo{
+    font-family: 'Pacifico', cursive;
+}
+
+.bee-logo:hover{
+    cursor:pointer
+}
+
+.btn-show-menu{
+    color: #FFF;
+    font-size: 30px;
+    background-color: #161b22;
+    border: none;
+}
+
+.btn-show-menu:hover{
+    color: #ffe484;
+    
+}
+
+.btn-show-menu:focus{
+    color: #ffc107;
+    box-shadow: none;
+}
+
+.dropdown-menu{
+    background-color: #161b22;
+    border: 1px solid #555;
+}
+
+main{
+    width: 100%;
+    margin-top: 24vh;
+}
+
+.card{
+    background-color: #161b22;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    
+}
+
+.card:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    transform: scaleY(1);
+    transition: all 0.5s;
+    transform-origin: bottom;
+}
+
+.card:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color:#ffc107;
+    transform: scaleY(0);
+    transition: all 0.5s;
+    transform-origin: bottom;
+}
+
+.card:hover::after{
+    transform: scaleY(1);
+}
+
+.fonts{
+    font-size: 11px;
+}
+
+.social-list{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+}
+
+.social-list li{
+    padding:10px;
+    color:#ffe484;
+    font-size:19px;
+}
+
+.btn-warning:hover, .btn-outline-warning:hover{
+    border-color: #ffe484;
+    background-color: #ffe484;
+}
+
+.btn-warning:focus, .btn-outline-warning:focus{
+    box-shadow: none;
+}
+
+.modal-content{    
+    background-color: #0d1117;
+    border: 1px solid #555;
+    color: #FFF;   
+}
+
+.modal-header{
+    background-color: #161b22;
+}
+
+.modal-header, .modal-body, .modal-footer{
+    border: none;
+}
+
+.btn-close, .btn-close:focus{
+    border: none !important;
+    box-shadow: none;
+    color: #FFF;
+}
+
+.form-control {
+    background-color: #555;
+    color: #adb5bd;
+    border: none;
+  }
+
+.form-control:focus{
+    background-color: #0d1117;
+    color: #FFF;
+    border: 1px solid #ffc107;
+    box-shadow: none;
+}
+
+/*
+.buttons button:nth-child(1){
+    border:1px solid #f0ad4e !important;
+    color:#f0ad4e;
+    height:40px;
+}
+
+.buttons button:nth-child(1):hover{
+    border:1px solid #f0ad4e !important;
+    color:#fff;
+    height:40px;
+    background-color:#f0ad4e;
+}
+
+.buttons button:nth-child(2){
+    border:1px solid #f0ad4e !important;
+    background-color: #f0ad4e;
+    color:#fff;
+     height:40px;
+}
+*/
