@@ -18,10 +18,10 @@
 
         <title>Regístrate</title>
     </head>
-    <body style="background-color: #242526;">
+    <body style="background-color: #0d1117;">
         <header>
             <!-- Navbar section -->
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top shadow">
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top shadow" style="background-color: #161b22;">
                 <section class="container-md">
                     <a class="navbar-brand mb-0 h1 fs-3">
                         <img class = "d-inline-block align-text-center" src="../../img/logo160x160.png" width="50" height="50"/>
@@ -61,7 +61,7 @@
                             <input class="form-control" name="contrasena" type="password" required />
                         </div>
                         <div class="mb-4">
-                            <label class="form-label" for="vercontrasena">Repite tu Contraseña</label>
+                            <label class="form-label" for="vercontrasena">Repite la contraseña</label>
                             <input class="form-control" name="vercontrasena" type="password" required />
                         </div>
                         <div class="mb-4">
@@ -76,7 +76,7 @@
                               </select>
                         </div>
                         <div class="mb-4">
-                            <input class="btn btn-warning w-100 mt-4" type="submit" value="Crear cuenta" name="btnregistro"/>
+                            <input class="btn btn-warning w-100 mt-4" type="submit" value="Crear cuenta"/>
                         </div>
                     </form>
                     <p class="text-white text-center">
