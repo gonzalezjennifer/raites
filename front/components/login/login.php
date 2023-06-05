@@ -17,10 +17,10 @@
         
         <title>Iniciar sesión</title>
     </head>
-    <body class="" style="background-color: #0d1117;">
+    <body class="" style="background-color: #242526;">
         <header>
             <!-- Navbar section -->
-            <nav class="navbar navbar-expand-md navbar-dark fixed-top shadow" style="background-color: #161b22;">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top shadow">
                 <section class="container-md">
                     <a class="navbar-brand mb-0 h1 fs-3">
                         <img class = "d-inline-block align-text-center" src="../../img/logo160x160.png" width="50" height="50"/>
@@ -56,7 +56,9 @@
                     </form>
                     <p class="text-white text-center">
                         ¿Aún no tienes cuenta?
+
                         <a href="../registro/insertarusuario.php" style="text-decoration: none;">
+
                             Regístrate aquí
                         </a>
                     </p>
