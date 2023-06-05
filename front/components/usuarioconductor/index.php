@@ -64,7 +64,7 @@
       </nav>
     </header>
     <main>
-    <div class="container" style="padding-top: 12px;">
+    <div class="container" style="padding-top: 23px;">
     <div><?php include '../../../back/raite/draite.php' ?></div>
       <div class="Cabecera mb-3" style="display:flex; width:100vw!important;">
         <h3>Raites</h3>
