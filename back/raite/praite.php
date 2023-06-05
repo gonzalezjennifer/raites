@@ -16,30 +16,26 @@
     $dias1 = str_word_count($apar['dias'], 1);
 
     $dias2 = str_word_count($ya['dias'], 1);
-
+    
     $coincidencias = array_intersect($dias1, $dias2);
 
     if($resultado2 and $apar['hora']==$ya['hora'] ){
         if(!empty($coincidencias)){
             foreach ($coincidencias as $palabra) {
-            echo '<div class="alert alert-danger">El dia '.$palabra .' a las '.$ya['hora'].' horas ya tienes un raite activo pto'. $apar['hora'].'</div>';
+            echo '<div class="alert alert-danger">El dia '.$palabra .' a las '.$ya['hora'].' ya tienes un raite activo'. $apar['hora'].'</div>';
         }
     }
     } else {
-            if($rep){
-                $query = "INSERT INTO apartar(id_raite, id_usuario) VALUES ('$id_raite', '$id_pasa') ";
-                $resultado = mysqli_query($conexion, $query);
-                if ($resultado){
-        
-                    if($apar['id']==$ver['id_raite']){
-                        $actua = "UPDATE raite SET lugares=lugares - '1' WHERE id='$id_raite'";
-                        $corre = mysqli_query($conexion, $actua);
-                    }
-                header("location: ./index.php");
+            $query = "INSERT INTO apartar(id_raite, id_usuario) VALUES ('$id_raite', '$id_pasa') ";
+            $resultado = mysqli_query($conexion, $query);
+            if ($resultado){
+                if($apar['id']==$ver['id_raite']){
+                    $actua = "UPDATE raite SET lugares=lugares - '1' WHERE id='$id_raite'";
+                    $corre = mysqli_query($conexion, $actua);
                 }
-                echo '<div class="alert alert-success">REGISTRO EXITOSO</div>';
-                
-            }else {
+                header("location: ./index.php");
+                echo '<div class="alert alert-success">REGISTRO EXITOSO</div>';   
+            } else {
                     echo '<div class="alert alert-danger">ERROR INESPERADO, INTENTE MAS TARDE</div>';
                 }
         }

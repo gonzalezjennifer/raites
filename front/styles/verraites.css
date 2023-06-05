@@ -1,0 +1,85 @@
+body{
+    font-family: 'Red Hat Display', sans-serif;;
+}
+
+.navbar{
+    box-shadow: 0px 15px 25px rgb(0, 0, 0, 0);
+}
+
+.navbar-toggler{
+    border: none !important;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
+.bee-logo{
+    font-family: 'Pacifico', cursive;
+}
+
+.bee-logo:hover{
+    cursor:pointer
+}
+
+.btn-show-menu{
+    color: #FFF;
+    font-size: 30px;
+    background-color: #161b22;
+    border: none;
+}
+
+.btn-show-menu:hover{
+    color: #ffe484;
+    
+}
+
+.btn-show-menu:focus{
+    color: #ffc107;
+    box-shadow: none;
+}
+
+.dropdown-menu{
+    background-color: #161b22;
+    border: 1px solid #555;
+}
+
+main{
+    width: 100%;
+    margin-top: 20vh;
+}
+
+th{
+    text-align: center; 
+    vertical-align: middle;
+}
+
+.btn-warning:hover, .btn-outline-warning:hover{
+    border-color: #ffe484;
+    background-color: #ffe484;
+}
+
+.btn, .btn:active, .btn-warning:active, .btn-success:active, .btn-danger:active,
+.btn:focus, .btn-warning:focus, .btn-success:focus, .btn-danger:focus, .btn-outline-warning:focus{
+    box-shadow: none;
+}
+
+.modal-content{    
+    background-color: #0d1117;
+    border: 1px solid #555;
+    color: #FFF;   
+}
+
+.modal-header{
+    background-color: #161b22;
+}
+
+.modal-header, .modal-body, .modal-footer{
+    border: none;
+}
+
+.btn-close, .btn-close:focus{
+    border: none !important;
+    box-shadow: none;
+    color: #FFF;
+}
