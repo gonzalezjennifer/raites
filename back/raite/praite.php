@@ -29,12 +29,10 @@
             $query = "INSERT INTO apartar(id_raite, id_usuario) VALUES ('$id_raite', '$id_pasa') ";
             $resultado = mysqli_query($conexion, $query);
             if ($resultado){
-                if($apar['id']==$ver['id_raite']){
                     $actua = "UPDATE raite SET lugares=lugares - '1' WHERE id='$id_raite'";
                     $corre = mysqli_query($conexion, $actua);
-                }
-                header("location: ./index.php");
-                echo '<div class="alert alert-success">REGISTRO EXITOSO</div>';   
+                    header("location: ./index.php");
+                    echo '<div class="alert alert-success">REGISTRO EXITOSO</div>';   
             } else {
                     echo '<div class="alert alert-danger">ERROR INESPERADO, INTENTE MAS TARDE</div>';
                 }
