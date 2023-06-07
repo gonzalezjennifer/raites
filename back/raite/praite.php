@@ -22,7 +22,7 @@
     if($resultado2 and $apar['hora']==$ya['hora'] ){
         if(!empty($coincidencias)){
             foreach ($coincidencias as $palabra) {
-            echo '<div class="alert alert-danger">El dia '.$palabra .' a las '.$ya['hora'].' ya tienes un raite activo'. $apar['hora'].'</div>';
+            echo '<div class="alert alert-danger">El dia '.$palabra .' a las '.$ya['hora'].' horas ya tienes un raite activo </div>';
         }
     }
     } else {

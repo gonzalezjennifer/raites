@@ -1,9 +1,3 @@
-var DataTable = require( 'datatables.net' );
-require( 'datatables.net-responsive' );
- 
-let table = new DataTable('#tablaraites', {
-    responsive: true
-});
 
 $(document).ready(function() {
     $('#tablaraites').DataTable({
